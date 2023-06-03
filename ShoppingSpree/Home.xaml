@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShoppingSpree.Home"
+             Focused="body_Focused"
+             
+             x:Name="body">
+
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsEnabled="False" IsVisible="False"/>
+    </Shell.BackButtonBehavior>
+    <ContentPage.Resources>
+        <StyleSheet Source="/Resources/Styles/Login.css" />
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout>
+
+            <VerticalStackLayout  x:Name="EntryLayout" Spacing="7.5">
+                
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="7.5">
+                <Border Stroke="#f6ffff"
+                            StrokeThickness="2"
+                            StrokeShape="RoundRectangle 25,25,25,25"
+                            HorizontalOptions="Center">
+                    <Button x:Name="NewProduct" Clicked="NewProduct_Clicked" FontSize="Medium" StyleClass="Sumbit" VerticalOptions="Center" HorizontalOptions="Center" MinimumWidthRequest="300" MaximumWidthRequest="500" Text="Add new product"></Button>
+                </Border>
+            </VerticalStackLayout>
+
+
+
+
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+    
+    
+    
+</ContentPage>

@@ -1,0 +1,19 @@
+#body {
+    background-color: #f6ffff;
+}
+
+.Title {
+    font-weight: 900;
+    color: #000000;
+}
+
+.Subtitle {
+    font-weight: 400;
+    color: #000000;
+}
+
+
+.Sumbit {
+    background-color: #fcde6c;
+    color: #000000;
+}
