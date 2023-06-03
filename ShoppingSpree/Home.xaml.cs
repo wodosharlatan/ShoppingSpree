@@ -22,22 +22,20 @@ namespace ShoppingSpree
         {
             InitializeComponent();
             userToken = token;
-            CreateAPIinstance();
-
-            LoadVisualsForFirstTime();
+            CreateAPIinstanceAndLoadVisualElements();
 
         }
 
-        public async void LoadVisualsForFirstTime()
-        {
-    
-            await UpdateVisualState();
-        }
-
-        private async void CreateAPIinstance()
+        private async void CreateAPIinstanceAndLoadVisualElements()
         {
             string res = await LoadMauiAsset();
             api = new API(res);
+
+            while (true)
+            {
+                await UpdateVisualState();
+                await Task.Delay(5000); 
+            }
 
         }
 
@@ -56,7 +54,7 @@ namespace ShoppingSpree
 
         public void CreateVisualEntry(int listIndex)
         {
-            int entryId = entryIDs[listIndex]; // Get the ID of the entry
+            int entryId = entryIDs[listIndex];
 
             Label Count = new Label
             {
@@ -93,14 +91,27 @@ namespace ShoppingSpree
 
             };
 
+            ImageButton imageButton = new ImageButton
+            {
+                BackgroundColor = Color.Parse("#000000"),
+            };
+
+            imageButton.Clicked += async (sender, e) =>
+            {
+                await Navigation.PushAsync(new EditProduct(userToken, entryId));
+            };
+
+
+
             checkBox.CheckedChanged += async (sender, e) =>
             {
                 if (checkBox.IsChecked)
                 {
-                    await RemoveEntryById(entryId); // Pass the entry ID to the removal method
-
+                    await RemoveEntryById(entryId);
                 }
             };
+
+
 
             HorizontalStackLayout newStack = new HorizontalStackLayout();
             newStack.Children.Add(Count);
@@ -109,6 +120,7 @@ namespace ShoppingSpree
             newStack.Children.Add(Time);
             newStack.Children.Add(Added);
             newStack.Children.Add(checkBox);
+            newStack.Children.Add(imageButton);
 
             EntryLayout.Children.Add(newStack);
         }
@@ -199,12 +211,5 @@ namespace ShoppingSpree
             }
             await UpdateVisualState();
         }
-
-        private async void body_Focused(object sender, FocusEventArgs e)
-        {
-            await UpdateVisualState();
-        }
-
-
     }
 }
