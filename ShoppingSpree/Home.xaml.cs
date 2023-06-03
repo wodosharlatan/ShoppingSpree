@@ -1,3 +1,4 @@
+
 using API_Wrapper;
 using Newtonsoft.Json.Linq;
 
@@ -22,6 +23,15 @@ namespace ShoppingSpree
             InitializeComponent();
             userToken = token;
             CreateAPIinstance();
+
+            LoadVisualsForFirstTime();
+
+        }
+
+        public async void LoadVisualsForFirstTime()
+        {
+    
+            await UpdateVisualState();
         }
 
         private async void CreateAPIinstance()
@@ -109,21 +119,47 @@ namespace ShoppingSpree
             await Navigation.PushAsync(new Products(userToken));
         }
 
-       
+
         public async Task UpdateVisualState()
         {
-            await LoadData(userToken);
-
-            EntryLayout.Children.Clear(); // Clear previous entries
-
-            for (int i = entryIDs.Count - 1; i >= 0; i--)
+            try
             {
-                CreateVisualEntry(i);
+                while (EntryLayout == null)
+                {
+                    await Task.Delay(100);
+                }
+
+                if (userToken != null)
+                {
+                    await LoadData(userToken);
+
+                    EntryLayout.Children.Clear();
+
+                    for (int i = entryIDs.Count - 1; i >= 0; i--)
+                    {
+                        CreateVisualEntry(i);
+                    }
+                }
+                else
+                {
+                    debug.Text = "User token is null";
+                }
+            }
+            catch (Exception ex)
+            {
+                debug.Text = ex.ToString();
             }
         }
 
+
+
         public async Task<int> LoadData(string token)
         {
+            while (api == null)
+            {
+                await Task.Delay(100);
+            }
+
             string res = await api.GetAllEntries(token);
             JArray entries = JArray.Parse(res);
 
