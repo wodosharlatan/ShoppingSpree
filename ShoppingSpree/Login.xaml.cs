@@ -55,7 +55,7 @@ public partial class MainPage : ContentPage
     {
 		SignUp = false;
         ConfirmPassword.IsVisible = false;
-        SubtitleLabel.Text = "Sign in to see your shared shopping list";
+        SubtitleLabel.Text = "Sign in to see content of the app";
         SubmitButton.Text = "Sign In";
         SignInButton.BackgroundColor = Color.Parse("#fcde6c");
         SignUpButton.BackgroundColor = Color.Parse("#f6ffff");

@@ -39,7 +39,7 @@
 
                 <VerticalStackLayout>
                     <Label FontSize="Title" StyleClass="Title" VerticalOptions="Center" HorizontalOptions="Center" Text="Shopping Spree"></Label>
-                    <Label FontSize="Subtitle" x:Name="SubtitleLabel" StyleClass="Subtitle" VerticalOptions="Center" HorizontalOptions="Center" Text="Sign up to join the shared shopping list"></Label>
+                    <Label FontSize="Subtitle" x:Name="SubtitleLabel" StyleClass="Subtitle" VerticalOptions="Center" HorizontalOptions="Center" Text="Sign up to join the shopping list"></Label>
                 </VerticalStackLayout>
 
                 <VerticalStackLayout Spacing="15"

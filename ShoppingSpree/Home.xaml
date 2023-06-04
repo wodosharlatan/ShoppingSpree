@@ -12,12 +12,12 @@
     </ContentPage.Resources>
 
     <ScrollView>
-        <VerticalStackLayout>
+        <VerticalStackLayout Spacing="5">
 
-            <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" x:Name="EntryLayout" Spacing="7.5">
+            <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" x:Name="EntryLayout" >
             </VerticalStackLayout>
 
-            <VerticalStackLayout Spacing="7.5">
+            <VerticalStackLayout>
                 <Border Stroke="#f6ffff"
                             StrokeThickness="2"
                             StrokeShape="RoundRectangle 25,25,25,25"

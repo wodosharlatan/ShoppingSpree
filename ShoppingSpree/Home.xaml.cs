@@ -169,8 +169,10 @@ namespace ShoppingSpree
 
             var mainView = new StackLayout
             {
-                Padding = 10,
-                Spacing = 10
+                Padding = 5,
+                Spacing = 5,
+                MinimumWidthRequest = 300,
+                MaximumWidthRequest = 500,
             };
             mainView.Children.Add(grid);
 
