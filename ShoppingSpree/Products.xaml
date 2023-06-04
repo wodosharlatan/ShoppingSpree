@@ -11,11 +11,8 @@
     <ContentPage.Resources>
         <StyleSheet Source="/Resources/Styles/Login.css" />
     </ContentPage.Resources>
-    
-    <VerticalStackLayout Spacing="15" Padding="30,0">
 
-        <Label Text="New Prod" TextColor="Black" x:Name="test"></Label>
-        
+    <VerticalStackLayout Spacing="15" Padding="30,0" HorizontalOptions="Center" VerticalOptions="Center">
         <VerticalStackLayout>
             <Label Margin="0,0,160,0"  TextColor="Black" HorizontalOptions="Center" Text="Product Name"></Label>
             <Border Stroke="#402c68"

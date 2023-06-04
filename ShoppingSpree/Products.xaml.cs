@@ -38,19 +38,16 @@ public partial class Products : ContentPage
     private void CountEntry_TextChanged(object sender, TextChangedEventArgs e)
     {
         Count = CountEntry.Text;
-        test.Text = Count;
     }
 
     private void UnitEntry_TextChanged(object sender, TextChangedEventArgs e)
     {
         Unit = UnitEntry.Text;
-        test.Text = Unit;
     }
 
     private void ProductEntry_TextChanged(object sender, TextChangedEventArgs e)
     {
         Product = ProductEntry.Text;
-        test.Text= Unit;
     }
 
     private async void SubmitButton_Clicked(object sender, EventArgs e)
@@ -67,24 +64,11 @@ public partial class Products : ContentPage
 
                     if (messageText == "Entry saved successfully")
                     {
-                        test.Text = messageText + " => Redirecting... ";
                         await Task.Delay(750);
                         await Navigation.PopAsync();
                     }
-                    else
-                    {
-                        test.Text = messageText;
-                    }
                 }
             }
-            else
-            {
-                test.Text = "Count is not a number";
-            }
-        }
-        else
-        {
-            test.Text = "Uh Oh! something is missing";
         }
     }
 

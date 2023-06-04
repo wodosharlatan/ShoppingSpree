@@ -11,7 +11,7 @@
         <StyleSheet Source="/Resources/Styles/Login.css" />
     </ContentPage.Resources>
 
-    <ScrollView>
+    <ScrollView HorizontalOptions="Center" VerticalOptions="Center">
         <VerticalStackLayout Spacing="5">
 
             <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" x:Name="EntryLayout" >
