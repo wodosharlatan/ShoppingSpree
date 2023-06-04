@@ -1,22 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ShoppingSpree.MainPage" x:Name="body">
-    
+<ContentPage
+	xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:local="clr-namespace:ShoppingSpree"
+             x:Class="ShoppingSpree.MainPage" x:Name="body" 
+             >
     <ContentPage.Resources>
         <StyleSheet Source="/Resources/Styles/Login.css" />
     </ContentPage.Resources>
-
     <Grid>
-
         <HorizontalStackLayout ZIndex="10" Margin="20,20,-150,200"  VerticalOptions="Start" HorizontalOptions="Center">
-
             <Border    
                 StrokeShape="RoundRectangle 25,25,25,25"
                  Stroke="#f6ffff"
                             StrokeThickness="2"
                 HorizontalOptions="Center">
-                <Button TextColor="Black" BackgroundColor="#fcde6c" FontSize="Medium" x:Name="SignUpButton" Clicked="SignUpButton_Clicked" Text="Sign up"></Button>
+                <Button TextColor="Black" BackgroundColor="#fcde6c" FontSize="Medium" x:Name="SignUpButton"  Clicked="SignUpButton_Clicked" Text="Sign up"></Button>
             </Border>
             <Border
                 StrokeShape="RoundRectangle 25,25,25,25"
@@ -24,75 +23,62 @@
                             StrokeThickness="2"
                 HorizontalOptions="Center">
                 <Button TextColor="Black" FontSize="Medium" BackgroundColor="#f6ffff" x:Name="SignInButton" Clicked="SignInButton_Clicked" Text="Sign in"></Button>
-
             </Border>
-
-
         </HorizontalStackLayout>
-
         <ScrollView>
-
             <VerticalStackLayout
             Spacing="35"
             Padding="30,0"
             VerticalOptions="Center">
-
                 <VerticalStackLayout>
                     <Label FontSize="Title" StyleClass="Title" VerticalOptions="Center" HorizontalOptions="Center" Text="Shopping Spree"></Label>
                     <Label FontSize="Subtitle" x:Name="SubtitleLabel" StyleClass="Subtitle" VerticalOptions="Center" HorizontalOptions="Center" Text="Sign up to join the shopping list"></Label>
                 </VerticalStackLayout>
-
                 <VerticalStackLayout Spacing="15"
             Padding="30,0">
-
                     <VerticalStackLayout>
                         <Label Margin="0,0,180,0"  TextColor="Black" HorizontalOptions="Center" Text="Your Name"></Label>
                         <Border Stroke="#402c68"
-                StrokeThickness="7.5"
-                MaximumWidthRequest="500"
-                MinimumWidthRequest="300"
-                                MaximumHeightRequest="75"
-                Padding="3"
-                StrokeShape="RoundRectangle 25,25,25,25"
-                HorizontalOptions="Center">
-                            <Entry TextChanged="NameEntry_TextChanged"   BackgroundColor="#f6ffff" HorizontalTextAlignment="Center" TextColor="Black" x:Name="NameEntry" Placeholder="Jhon Doe"/>
+            StrokeThickness="7.5"
+            MaximumWidthRequest="500"
+            MinimumWidthRequest="300"
+            MaximumHeightRequest="75"
+            Padding="3"
+            BackgroundColor="Transparent"
+            StrokeShape="RoundRectangle 25,25,25,25"
+            HorizontalOptions="Center">
+                            <local:NoUnderlineEntry  PlaceholderColor="Gray" NoUnderline="True"  EntryBackgroundColor="#f6ffff" TextChanged="NameEntry_TextChanged" HorizontalTextAlignment="Center" TextColor="Black" x:Name="NameEntry" Placeholder="Jhon Doe" />
                         </Border>
                     </VerticalStackLayout>
-
                     <VerticalStackLayout>
                         <Label Margin="0,0,190,0" TextColor="Black" HorizontalOptions="Center" Text="Password"></Label>
                         <Border Stroke="#402c68"
-                StrokeThickness="7.5"
-                MaximumWidthRequest="500"
-                MinimumWidthRequest="300"
-                MaximumHeightRequest="75"
-                Padding="3"
-                StrokeShape="RoundRectangle 25,25,25,25"
-                HorizontalOptions="Center">
-                            <Entry TextChanged="PasswordEntry_TextChanged"   BackgroundColor="#f6ffff" HorizontalTextAlignment="Center" TextColor="Black" x:Name="PasswordEntry" IsPassword="True"  Placeholder="ex@mple"/>
+            StrokeThickness="7.5"
+            MaximumWidthRequest="500"
+            MinimumWidthRequest="300"
+            MaximumHeightRequest="75"
+            Padding="3"
+            BackgroundColor="Transparent"
+            StrokeShape="RoundRectangle 25,25,25,25"
+            HorizontalOptions="Center">
+                            <local:NoUnderlineEntry PlaceholderColor="Gray" NoUnderline="True"  EntryBackgroundColor="#f6ffff" TextChanged="PasswordEntry_TextChanged" HorizontalTextAlignment="Center" TextColor="Black" x:Name="PasswordEntry" IsPassword="True"  Placeholder="ex@mple"/>
                         </Border>
                     </VerticalStackLayout>
-
                     <VerticalStackLayout x:Name="ConfirmPassword">
                         <Label Margin="0,0,130,0"  TextColor="Black" HorizontalOptions="Center" Text="Confirm Password"></Label>
                         <Border Stroke="#402c68"
-                StrokeThickness="7.5"
-                                
-                                
-                                
-                                
-                MaximumWidthRequest="500"
-                MinimumWidthRequest="300"
-                MaximumHeightRequest="75"
-                Padding="3"
-                StrokeShape="RoundRectangle 25,25,25,25"
-                HorizontalOptions="Center">
-                            <Entry TextChanged="ConfirmEntry_TextChanged"   BackgroundColor="#f6ffff" HorizontalTextAlignment="Center" TextColor="Black" x:Name="ConfirmEntry" IsPassword="True"  Placeholder="ex@mple"/>
+            StrokeThickness="7.5"
+            MaximumWidthRequest="500"
+            MinimumWidthRequest="300"
+            MaximumHeightRequest="75"
+            Padding="3"
+            BackgroundColor="Transparent"
+            StrokeShape="RoundRectangle 25,25,25,25"
+            HorizontalOptions="Center">
+                            <local:NoUnderlineEntry  PlaceholderColor="Gray" NoUnderline="True"  EntryBackgroundColor="#f6ffff" TextChanged="ConfirmEntry_TextChanged" HorizontalTextAlignment="Center" TextColor="Black" x:Name="ConfirmEntry" IsPassword="True"  Placeholder="ex@mple"/>
                         </Border>
                     </VerticalStackLayout>
-
                 </VerticalStackLayout>
-
                 <VerticalStackLayout Spacing="7.5">
                     <Border Stroke="#f6ffff"
                             StrokeThickness="2"
@@ -101,9 +87,7 @@
                         <Button x:Name="SubmitButton" Clicked="SubmitButton_Clicked" FontSize="Medium" StyleClass="Sumbit" VerticalOptions="Center" HorizontalOptions="Center" MinimumWidthRequest="300" MaximumWidthRequest="500" Text="Sign Up"></Button>
                     </Border>
                 </VerticalStackLayout>
-
             </VerticalStackLayout>
         </ScrollView>
     </Grid>
-
 </ContentPage>

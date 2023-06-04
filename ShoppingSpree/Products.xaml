@@ -1,58 +1,65 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+<ContentPage
+	xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:local="clr-namespace:ShoppingSpree"
              x:Class="ShoppingSpree.Products" Title="" x:Name="body">
-
-
     <Shell.BackButtonBehavior>
         <BackButtonBehavior IsEnabled="True" IsVisible="False"/>
     </Shell.BackButtonBehavior>
-    
     <ContentPage.Resources>
         <StyleSheet Source="/Resources/Styles/Login.css" />
     </ContentPage.Resources>
-
     <VerticalStackLayout Spacing="15" Padding="30,0" HorizontalOptions="Center" VerticalOptions="Center">
         <VerticalStackLayout>
-            <Label Margin="0,0,160,0"  TextColor="Black" HorizontalOptions="Center" Text="Product Name"></Label>
+            <Label Margin="0,0,160,0" TextColor="Black" HorizontalOptions="Center" Text="Product Name" />
             <Border Stroke="#402c68"
-                StrokeThickness="7.5"
-                MaximumWidthRequest="500"
-                MinimumWidthRequest="300"
-                MaximumHeightRequest="75"
-                Padding="3"
-                StrokeShape="RoundRectangle 25,25,25,25"
-                HorizontalOptions="Center">
-                <Entry TextChanged="ProductEntry_TextChanged"   BackgroundColor="#f6ffff" HorizontalTextAlignment="Center" TextColor="Black" x:Name="ProductEntry" Placeholder="Bread"/>
+            StrokeThickness="7.5"
+            MaximumWidthRequest="500"
+            MinimumWidthRequest="300"
+            MaximumHeightRequest="75"
+            Padding="3"
+            BackgroundColor="Transparent"
+            StrokeShape="RoundRectangle 25,25,25,25"
+            HorizontalOptions="Center">
+                <local:NoUnderlineEntry NoUnderline="True"
+                                         PlaceholderColor="Gray"
+                               EntryBackgroundColor="#f6ffff"
+                               TextChanged="ProductEntry_TextChanged"
+                               HorizontalTextAlignment="Center"
+                               TextColor="Black"
+                               x:Name="ProductEntry"
+                               Placeholder="Bread" />
             </Border>
         </VerticalStackLayout>
         <VerticalStackLayout>
             <Label Margin="0,0,230,0"  TextColor="Black" HorizontalOptions="Center" Text="Unit"></Label>
             <Border Stroke="#402c68"
-                StrokeThickness="7.5"
-                MaximumWidthRequest="500"
-                MinimumWidthRequest="300"
-                MaximumHeightRequest="75"
-                Padding="3"
-                StrokeShape="RoundRectangle 25,25,25,25"
-                HorizontalOptions="Center">
-                <Entry TextChanged="UnitEntry_TextChanged"   BackgroundColor="#f6ffff" HorizontalTextAlignment="Center" TextColor="Black" x:Name="UnitEntry" Placeholder="KG's"/>
+            StrokeThickness="7.5"
+            MaximumWidthRequest="500"
+            MinimumWidthRequest="300"
+            MaximumHeightRequest="75"
+            Padding="3"
+            BackgroundColor="Transparent"
+            StrokeShape="RoundRectangle 25,25,25,25"
+            HorizontalOptions="Center">
+                <local:NoUnderlineEntry  PlaceholderColor="Gray" NoUnderline="True"  EntryBackgroundColor="#f6ffff" TextChanged="UnitEntry_TextChanged" HorizontalTextAlignment="Center" TextColor="Black" x:Name="UnitEntry" Placeholder="KG's"/>
             </Border>
         </VerticalStackLayout>
         <VerticalStackLayout>
             <Label Margin="0,0,220,0"  TextColor="Black" HorizontalOptions="Center" Text="Count"></Label>
             <Border Stroke="#402c68"
-                StrokeThickness="7.5"
-                MaximumWidthRequest="500"
-                MinimumWidthRequest="300"
-                                MaximumHeightRequest="75"
-                Padding="3"
-                StrokeShape="RoundRectangle 25,25,25,25"
-                HorizontalOptions="Center">
-                <Entry TextChanged="CountEntry_TextChanged"   BackgroundColor="#f6ffff" HorizontalTextAlignment="Center" TextColor="Black" x:Name="CountEntry" Placeholder="12"/>
+            StrokeThickness="7.5"
+            MaximumWidthRequest="500"
+            MinimumWidthRequest="300"
+            MaximumHeightRequest="75"
+            Padding="3"
+            BackgroundColor="Transparent"
+            StrokeShape="RoundRectangle 25,25,25,25"
+            HorizontalOptions="Center">
+                <local:NoUnderlineEntry  PlaceholderColor="Gray" NoUnderline="True"  EntryBackgroundColor="#f6ffff" TextChanged="CountEntry_TextChanged" HorizontalTextAlignment="Center" TextColor="Black" x:Name="CountEntry" Placeholder="12"/>
             </Border>
         </VerticalStackLayout>
-
         <VerticalStackLayout Spacing="7.5">
             <Border Stroke="#f6ffff"
                             StrokeThickness="2"
@@ -61,6 +68,5 @@
                 <Button x:Name="SubmitButton" Clicked="SubmitButton_Clicked" FontSize="Medium" StyleClass="Sumbit" VerticalOptions="Center" HorizontalOptions="Center" MinimumWidthRequest="300" MaximumWidthRequest="500" Text="Add new product"></Button>
             </Border>
         </VerticalStackLayout>
-
     </VerticalStackLayout>
 </ContentPage>

@@ -1,11 +1,12 @@
-﻿namespace ShoppingSpree;
-
-public partial class App : Application
+﻿namespace ShoppingSpree
 {
-	public App()
-	{
-		InitializeComponent();
+    public partial class App : Application
+    {
+        public App()
+        {
+            InitializeComponent();
 
-		MainPage = new AppShell();
-	}
+            MainPage = new AppShell();
+        }
+    }
 }
