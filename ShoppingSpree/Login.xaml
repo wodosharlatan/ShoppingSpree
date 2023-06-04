@@ -65,7 +65,7 @@
                         </Border>
                     </VerticalStackLayout>
                     <VerticalStackLayout x:Name="ConfirmPassword">
-                        <Label Margin="0,0,130,0"  TextColor="Black" HorizontalOptions="Center" Text="Confirm Password"></Label>
+                        <Label Margin="0,0,125,0"  TextColor="Black" HorizontalOptions="Center" Text="Confirm Password"></Label>
                         <Border Stroke="#402c68"
             StrokeThickness="7.5"
             MaximumWidthRequest="500"
