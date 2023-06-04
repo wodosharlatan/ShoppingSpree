@@ -91,17 +91,6 @@ namespace ShoppingSpree
 
             };
 
-            ImageButton imageButton = new ImageButton
-            {
-                BackgroundColor = Color.Parse("#000000"),
-            };
-
-            imageButton.Clicked += async (sender, e) =>
-            {
-                await Navigation.PushAsync(new EditProduct(userToken, entryId));
-            };
-
-
 
             checkBox.CheckedChanged += async (sender, e) =>
             {
@@ -120,7 +109,6 @@ namespace ShoppingSpree
             newStack.Children.Add(Time);
             newStack.Children.Add(Added);
             newStack.Children.Add(checkBox);
-            newStack.Children.Add(imageButton);
 
             EntryLayout.Children.Add(newStack);
         }

@@ -38,10 +38,7 @@
 
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
-		<None Remove="Resources\Raw\activeUser.txt" />
-    <MauiAsset Include="Resources\Raw\APIKEY.env" LogicalName="%(Resources)%(APIKEY)%(env)" />
-    <MauiAsset Include="Resources\Raw\activeUser.txt" LogicalName="%(Resources)%(activeUser)%(txt)" />
-	</ItemGroup>
+    <MauiAsset Include="Resources\Raw\APIKEY.env" LogicalName="%(Resources)%(APIKEY)%(env)" />	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
@@ -56,12 +53,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiAsset Update="Resources\Raw\activeUser.txt">
-	    <LogicalName>%(RecursiveDir)%(Filename)%(Extension)</LogicalName>
-	  </MauiAsset>
-	  <MauiAsset Update="Resources\Raw\activeUser.txt">
-	    <LogicalName>%(RecursiveDir)%(Filename)%(Extension)</LogicalName>
-	  </MauiAsset>
 	  <MauiAsset Update="Resources\Raw\APIKEY - EXAMPLE.env">
 	    <LogicalName>%(RecursiveDir)%(Filename)%(Extension)</LogicalName>
 	  </MauiAsset>

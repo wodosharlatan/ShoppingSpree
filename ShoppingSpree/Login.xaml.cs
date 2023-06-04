@@ -15,8 +15,9 @@ public partial class MainPage : ContentPage
 
     public MainPage()
 	{
-        InitializeComponent();
         CreateAPIinstance();
+        InitializeComponent();
+        
     }
 
 
@@ -70,13 +71,10 @@ public partial class MainPage : ContentPage
                 {
                     string res = await api.CreateNewUser(Username.Trim(), Password.Trim());
 
-                    // Parse the JSON response
                     JObject responseJson = JObject.Parse(res);
 
-                    // Check if the response contains the "message" property
                     if (responseJson.TryGetValue("message", out var message))
                     {
-                        // Check the value of the "message" property
                         string messageText = message.ToString();
                         
                         if (messageText == "User saved successfully")
@@ -118,12 +116,11 @@ public partial class MainPage : ContentPage
                     SubtitleLabel.Text = res;
                     try
                     {
-                        // Parse the JSON response
+
                         JObject responseJson = JObject.Parse(res);
-                        // Check if the response contains the "message" property
+
                         if (responseJson.TryGetValue("message", out var message))
                         {
-                            // Check the value of the "message" property
                             string messageText = message.ToString();
                             SubtitleLabel.Text = messageText;
                         }
