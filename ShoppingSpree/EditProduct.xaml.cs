@@ -11,6 +11,7 @@ public partial class EditProduct : ContentPage
         InitializeComponent();
         CreateAPIinstance();
         GetProductInfo(token,entryID);
+        
     }
 
 
@@ -19,12 +20,12 @@ public partial class EditProduct : ContentPage
 
     async void CreateAPIinstance()
     {
-        string res = await LoadMauiAsset();
+        string res = await LoadENVfile();
         api = new API(res);
     }
 
 
-    async Task<string> LoadMauiAsset()
+    async Task<string> LoadENVfile()
     {
         using var stream = await FileSystem.OpenAppPackageFileAsync("APIKEY.env");
         using var reader = new StreamReader(stream);
@@ -32,6 +33,11 @@ public partial class EditProduct : ContentPage
         var contents = reader.ReadToEnd();
         return contents;
     }
+
+   
+
+
+
 
     public async void GetProductInfo(string token,int id)
     {

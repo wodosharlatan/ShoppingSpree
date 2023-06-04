@@ -39,16 +39,15 @@
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
-		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
 
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
 
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
-		<None Remove="Resources\Raw\APIKEY - EXAMPLE.env" />
-		<None Remove="Resources\Raw\APIKEY.env" />
+		<None Remove="Resources\Raw\activeUser.txt" />
     <MauiAsset Include="Resources\Raw\APIKEY.env" LogicalName="%(Resources)%(APIKEY)%(env)" />
+    <MauiAsset Include="Resources\Raw\activeUser.txt" LogicalName="%(Resources)%(activeUser)%(txt)" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -64,6 +63,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiAsset Update="Resources\Raw\activeUser.txt">
+	    <LogicalName>%(RecursiveDir)%(Filename)%(Extension)</LogicalName>
+	  </MauiAsset>
 	  <MauiAsset Update="Resources\Raw\APIKEY - EXAMPLE.env">
 	    <LogicalName>%(RecursiveDir)%(Filename)%(Extension)</LogicalName>
 	  </MauiAsset>
@@ -79,6 +81,10 @@
 	  <MauiXaml Update="Products.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Resources\Images\" />
 	</ItemGroup>
 
 </Project>
