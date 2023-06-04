@@ -38,6 +38,8 @@
 
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+		<None Remove="Resources\Fonts\Poppins-Regular.ttf" />
+		<None Remove="Resources\Fonts\Poppins-SemiBold.ttf" />
     <MauiAsset Include="Resources\Raw\APIKEY.env" LogicalName="%(Resources)%(APIKEY)%(env)" />	</ItemGroup>
 
 	<ItemGroup>
@@ -59,9 +61,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="EditProduct.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
 	  <MauiXaml Update="Home.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

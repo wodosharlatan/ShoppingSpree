@@ -58,39 +58,44 @@ namespace ShoppingSpree
 
             Label Count = new Label
             {
-                Text = productNames[listIndex].ToString() + ";",
+                Text = productNames[listIndex].ToString(),
                 TextColor = Color.Parse("#000000"),
+                FontSize = 16,
+                FontAttributes = FontAttributes.Bold
             };
 
             Label Unit = new Label
             {
-                Text = units[listIndex].ToString() + ";",
+                Text = units[listIndex].ToString(),
                 TextColor = Color.Parse("#000000"),
+                FontSize = 14
             };
 
             Label ProductName = new Label
             {
-                Text = counts[listIndex].ToString() + ";",
+                Text = counts[listIndex].ToString(),
                 TextColor = Color.Parse("#000000"),
+                FontSize = 14
             };
 
             Label Time = new Label
             {
-                Text = addedBy[listIndex].ToString() + ";",
+                Text = addedBy[listIndex].ToString(),
                 TextColor = Color.Parse("#000000"),
+                FontSize = 12
             };
 
             Label Added = new Label
             {
-                Text = timeStamps[listIndex].ToString() + ";",
+                Text = timeStamps[listIndex].ToString(),
                 TextColor = Color.Parse("#000000"),
+                FontSize = 12
             };
 
             CheckBox checkBox = new CheckBox
             {
-
+                Color = Color.Parse("#000000")
             };
-
 
             checkBox.CheckedChanged += async (sender, e) =>
             {
@@ -100,9 +105,12 @@ namespace ShoppingSpree
                 }
             };
 
+            HorizontalStackLayout newStack = new HorizontalStackLayout
+            {
+                Padding = new Thickness(10),
+                Spacing = 10
+            };
 
-
-            HorizontalStackLayout newStack = new HorizontalStackLayout();
             newStack.Children.Add(Count);
             newStack.Children.Add(Unit);
             newStack.Children.Add(ProductName);
@@ -112,6 +120,7 @@ namespace ShoppingSpree
 
             EntryLayout.Children.Add(newStack);
         }
+
 
 
         private async void NewProduct_Clicked(object sender, EventArgs e)
@@ -140,16 +149,9 @@ namespace ShoppingSpree
                         CreateVisualEntry(i);
                     }
                 }
-                else
-                {
-                    debug.Text = "User token is null";
-                }
             }
-            catch (Exception ex)
-            {
-                debug.Text = ex.ToString();
-            }
-        }
+            catch (Exception ex){ }
+        }                                
 
 
 

@@ -14,8 +14,7 @@
     <ScrollView>
         <VerticalStackLayout>
 
-            <VerticalStackLayout  x:Name="EntryLayout" Spacing="7.5">
-                <Label x:Name="debug"  TextColor="Black"></Label>
+            <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" x:Name="EntryLayout" Spacing="7.5">
             </VerticalStackLayout>
 
             <VerticalStackLayout Spacing="7.5">
