@@ -1,5 +1,6 @@
 
 using API_Wrapper;
+using Microsoft.Maui.Controls.Shapes;
 using Newtonsoft.Json.Linq;
 
 namespace ShoppingSpree
@@ -34,7 +35,7 @@ namespace ShoppingSpree
             while (true)
             {
                 await UpdateVisualState();
-                await Task.Delay(5000); 
+                await Task.Delay(5000);
             }
 
         }
@@ -54,9 +55,10 @@ namespace ShoppingSpree
 
         public void CreateVisualEntry(int listIndex)
         {
+
             int entryId = entryIDs[listIndex];
 
-            Label Count = new Label
+            Label ProductName = new Label
             {
                 Text = productNames[listIndex].ToString(),
                 TextColor = Color.Parse("#000000"),
@@ -68,15 +70,29 @@ namespace ShoppingSpree
             {
                 Text = units[listIndex].ToString(),
                 TextColor = Color.Parse("#000000"),
-                FontSize = 14
+                FontSize = 16,
+                FontAttributes = FontAttributes.Bold
             };
 
-            Label ProductName = new Label
+            Label Count = new Label
             {
                 Text = counts[listIndex].ToString(),
                 TextColor = Color.Parse("#000000"),
-                FontSize = 14
+                FontSize = 16,
+                FontAttributes = FontAttributes.Bold
             };
+
+
+            HorizontalStackLayout MainText = new HorizontalStackLayout()
+            {
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.Start,
+                Spacing = 5
+            };
+
+            MainText.Children.Add(ProductName);
+            MainText.Children.Add(Count);
+            MainText.Children.Add(Unit);
 
             Label Time = new Label
             {
@@ -92,6 +108,28 @@ namespace ShoppingSpree
                 FontSize = 12
             };
 
+
+            HorizontalStackLayout AdditionalText = new HorizontalStackLayout()
+            {
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.Start,
+                Spacing = 5
+            };
+
+            AdditionalText.Children.Add(Added);
+            AdditionalText.Children.Add(Time);
+
+
+
+            VerticalStackLayout views = new VerticalStackLayout()
+            {
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center
+            };
+
+            views.Children.Add(MainText);
+            views.Children.Add(AdditionalText);
+
             CheckBox checkBox = new CheckBox
             {
                 Color = Color.Parse("#000000")
@@ -105,20 +143,38 @@ namespace ShoppingSpree
                 }
             };
 
-            HorizontalStackLayout newStack = new HorizontalStackLayout
+            HorizontalStackLayout mainHorizont = new HorizontalStackLayout
             {
-                Padding = new Thickness(10),
-                Spacing = 10
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.Center,
+                Padding = 20,
+                Spacing = 10,
+                BackgroundColor = Color.Parse("#fcde6c")
             };
 
-            newStack.Children.Add(Count);
-            newStack.Children.Add(Unit);
-            newStack.Children.Add(ProductName);
-            newStack.Children.Add(Time);
-            newStack.Children.Add(Added);
-            newStack.Children.Add(checkBox);
+            mainHorizont.Children.Add(views);
+            mainHorizont.Children.Add(checkBox);
 
-            EntryLayout.Children.Add(newStack);
+            var border = new Frame
+            {
+                BorderColor = Color.Parse("#fcde6c"),
+                BackgroundColor = Color.Parse("#fcde6c"),
+                CornerRadius = 25,
+                Padding = 2,
+                Content = mainHorizont
+            };
+
+            var grid = new Grid();
+            grid.Children.Add(border);
+
+            var mainView = new StackLayout
+            {
+                Padding = 10,
+                Spacing = 10
+            };
+            mainView.Children.Add(grid);
+
+            EntryLayout.Children.Add(mainView);
         }
 
 
@@ -150,8 +206,8 @@ namespace ShoppingSpree
                     }
                 }
             }
-            catch (Exception ex){ }
-        }                                
+            catch (Exception ex) { }
+        }
 
 
 
