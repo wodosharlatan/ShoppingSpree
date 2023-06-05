@@ -1,6 +1,6 @@
 # ShoppingSpree Application Documentation
 
-# Powered by:
+#### Powered by:
  1. <a href="https://github.com/wodosharlatan/REST-API-DB"> My REST API </a>
  2. <a href="https://github.com/wodosharlatan/API-Wrapper"> My nugget package </a>
 
@@ -47,7 +47,7 @@ The `Products` class represents a page in the ShoppingSpree application where us
 
 - `Products(string token)`: Constructor method that initializes the page components and sets the user token.
 
-## Important Notice
+# Important Notice
 
 In order to use the ShoppingSpree application, you need to create an `APIKey.env` file and place your API key inside it. This file should be located in the same directory as the application files. The API key is required for communication with the API and must be obtained from the API provider. Make sure to secure your API key and never share it publicly.
 
