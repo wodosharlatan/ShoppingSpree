@@ -31,13 +31,6 @@ The `MainPage` class represents the main page of the ShoppingSpree application. 
 - `Password`: The password entered by the user.
 - `Confirmation`: The password confirmation entered during sign-up.
 
-### Methods
-
-- `MainPage()`: Constructor method that initializes the page components.
-- `SignUpButton_Clicked()`: Event handler for the sign-up button click event.
-- `SignInButton_Clicked()`: Event handler for the sign-in button click event.
-- `SubmitButton_Clicked()`: Event handler for the submit button click event. Performs sign-up or sign-in based on the user's choice.
-
 ## Products Class
 
 The `Products` class represents a page in the ShoppingSpree application where users can add new products to their shopping list.
@@ -53,10 +46,6 @@ The `Products` class represents a page in the ShoppingSpree application where us
 ### Methods
 
 - `Products(string token)`: Constructor method that initializes the page components and sets the user token.
-- `CountEntry_TextChanged()`: Event handler for the count entry text changed event.
-- `UnitEntry_TextChanged()`: Event handler for the unit entry text changed event.
-- `ProductEntry_TextChanged()`: Event handler for the product entry text changed event.
-- `SubmitButton_Clicked()`: Event handler for the submit button click event. Adds a new product entry to the shopping list.
 
 ## Important Notice
 
